@@ -6,6 +6,20 @@
   }
 
   &__header {
+    margin-top: 0;
     text-align: center;
+  }
+
+  &__footer {
+    align-items: center;
+    background-color: #eaeaf5;
+    bottom: 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
   }
 }

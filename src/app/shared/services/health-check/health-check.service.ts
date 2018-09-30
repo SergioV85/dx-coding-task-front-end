@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class RequestAmountService {
+export class HealthCheckService {
   constructor(private http: HttpClient) {}
 
-  public getPossibleNotes(amount: number): Observable<number[]> {
-    return this.http.get<number[]>('/amount', { params: { amount: amount.toString() } });
+  public getServerVersion(): Observable<{ version: string }> {
+    return this.http.get<{ version: string }>('/server-version');
   }
 }
