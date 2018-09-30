@@ -24,3 +24,17 @@
     </button>
   </mat-card-actions>
 </mat-card>
+<mat-card *ngIf="notes"
+    class="c-available-amounts">
+  <mat-card-header>
+    <mat-card-title>
+      Possible notes to withdraw
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="c-available-amounts__notes">
+    <mat-chip-list *ngFor="let note of notes"
+        class="c-available-amounts__note">
+      <mat-chip>${{ note }}</mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
+</mat-card>

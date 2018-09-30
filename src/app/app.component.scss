@@ -2,6 +2,7 @@
   &__container {
     margin: 0 auto;
     max-width: 1000px;
+    min-height: calc(100% - 100px);
     width: 100%;
   }
 
@@ -13,13 +14,13 @@
   &__footer {
     align-items: center;
     background-color: #eaeaf5;
-    bottom: 0;
+
     box-sizing: border-box;
     display: flex;
     height: 50px;
     justify-content: center;
+    margin-top: 50px;
     padding: 10px;
-    position: absolute;
     width: 100%;
   }
 }

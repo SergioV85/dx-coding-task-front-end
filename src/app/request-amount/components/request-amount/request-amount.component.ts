@@ -12,6 +12,7 @@ import { RequestAmountService } from '../../../shared/services/request-amount/re
 export class RequestAmountComponent implements OnDestroy {
   public title = 'Cash Machine App';
   public amount = new FormControl('');
+  public notes: number[] | undefined;
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(private cashService: RequestAmountService) {}
@@ -22,14 +23,19 @@ export class RequestAmountComponent implements OnDestroy {
   }
 
   public resetAmount() {
-    this.amount.setValue('');
+    this.amount.setValue(null);
   }
   public submit() {
     const value = this.amount.value;
 
+    this.notes = undefined;
+
     this.cashService
       .getPossibleNotes(value)
       .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe(amount => console.log(amount));
+      .subscribe(({ amount }) => {
+        console.log('amount in component', amount);
+        this.notes = amount;
+      });
   }
 }

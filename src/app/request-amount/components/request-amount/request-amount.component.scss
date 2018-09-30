@@ -1,0 +1,16 @@
+.c-available-amounts {
+  margin-top: 30px;
+
+  &__notes {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__note {
+    margin: 3px 5px;
+
+    &:first-child {
+      margin-top: 3px;
+    }
+  }
+}
