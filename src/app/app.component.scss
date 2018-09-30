@@ -1,0 +1,11 @@
+.c-app {
+  &__container {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  &__header {
+    text-align: center;
+  }
+}
